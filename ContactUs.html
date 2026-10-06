@@ -1,0 +1,78 @@
+<!-- CONTACTUS.HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <!-- Meta tags for character encoding and responsive design -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Page title -->
+        <title>Contact Us</title>
+        <!-- Link to the external CSS file -->
+        <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+        <main>
+                <!-- Header title -->
+                <h1>AJWA'S PASTA STATION</h1>
+                <!-- Navigation bar with links to different pages -->
+                <nav>
+                        <a href="Index.html" class="nav-link">Home</a>
+                        <a href="AboutUs.html" class="nav-link">About Us</a>
+                        <a href="Lessons.html" class="nav-link">Lessons</a>
+                        <a href="Resources.html" class="nav-link">Resources</a>
+                        <a href="ContactUs.html" class="nav-link contactus"><u>Contact Us</u></a>
+                </nav>
+                <p>Enter your name and our customer service will help you to contact us:</p>
+                <!-- Contact form for user input -->
+                <form class="contact-form">
+                        Full Name: <br>
+                        <input type="text" name="fullname"><br>
+                        Phone Number:<br>
+                        <input type="number" name="phonenumber"><br>
+                        Email Address:<br>
+                        <input type="text" name="emailaddress"><br>
+                        Message:<br>
+                        <input type="text" name="message"><br><br>
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Submit">
+                </form>
+                <br><br>
+        </main>
+        <!-- Footer section -->
+        <footer>
+                A restaurant where Pasta is Served Right<br>
+                All Rights Reserved ©<br>
+                <p>
+                        <a href="Validations/CssValidatorStyle.css.pdf" target="_blank">
+                                <img style="border:0;width:88px;height:31px"
+                                        src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+                        </a>
+                </p>
+        </footer>
+        <!-- My own Java Script Form validation code -->
+        <script>
+                document.querySelector(".contact-form").addEventListener("submit", function (event) {
+                        const form = event.target;
+                        const fields = [
+                                { name: "fullname", label: "Full Name" },
+                                { name: "phonenumber", label: "Phone Number" },
+                                { name: "emailaddress", label: "Email Address" },
+                                { name: "message", label: "Message" }
+                        ];
+
+                        for (let field of fields) {
+                                const input = form.elements[field.name];
+                                if (!input.value.trim()) {
+                                        alert(`Please fill "${field.label}" out`);
+                                        input.focus();
+                                        event.preventDefault();
+                                        return;
+                                }
+                        }
+                });
+        </script>
+</body>
+
+</html>
